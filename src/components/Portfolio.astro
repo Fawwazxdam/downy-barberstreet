@@ -1,0 +1,46 @@
+---
+const styles = [
+  { name: 'Classic Fade', category: 'Haircut' },
+  { name: 'Pompadour', category: 'Haircut' },
+  { name: 'Textured Crop', category: 'Haircut' },
+  { name: 'Side Part', category: 'Haircut' },
+  { name: 'Buzz Cut', category: 'Haircut' },
+  { name: 'Undercut', category: 'Haircut' },
+];
+---
+
+<section id="portofolio" class="py-20 sm:py-28 px-4 relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-barber-dark to-barber-brown/20"></div>
+
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="font-body text-xs tracking-[0.4em] text-barber-gold uppercase mb-3">Karya Kami</p>
+      <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+        Portofolio Gaya Rambut
+      </h2>
+      <div class="w-16 h-0.5 bg-barber-gold mx-auto"></div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-6">
+      {styles.map((style, i) => (
+        <div class={`group relative rounded-lg overflow-hidden gold-border card-glow transition-all duration-500 hover:scale-[1.02] ${i === 0 ? 'sm:col-span-2 sm:row-span-2' : ''}`}>
+          <div class={`w-full bg-gradient-to-br from-barber-brown-light to-barber-dark ${i === 0 ? 'aspect-square sm:aspect-auto sm:h-full' : 'aspect-square'}`}>
+            <div class="absolute inset-0 bg-gradient-to-t from-barber-dark via-transparent to-transparent opacity-60"></div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <svg class="w-10 h-10 sm:w-12 sm:h-12 text-barber-gold/30 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-barber-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-gradient-to-t from-barber-dark/90 to-transparent">
+            <span class="text-xs text-barber-gold uppercase tracking-wider">{style.category}</span>
+            <h3 class="font-display text-sm sm:text-lg font-semibold text-white">{style.name}</h3>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const services = [
+  {
+    title: "Gentleman Haircut",
+    price: "Rp 15.000",
+    desc: "Potongan rambut customized sesuai keinginan. Bebas konsultasi gaya apapun.",
+    icon: "lucide:scissors"
+  },
+  {
+    title: "Kids Haircut",
+    price: "Mulai Rp 10.000",
+    desc: "Potongan rambut khusus anak-anak dengan penanganan yang ramah dan nyaman.",
+    icon: "lucide:palette"
+  },
+  {
+    title: "Pomade",
+    price: "Rp 10.000",
+    desc: "Pomade berkalas untuk styling rambut. Tersedia berbagai pilihan aroma.",
+    icon: "lucide:sparkles"
+  }
+];
+---
+<section id="layanan" class="py-24 bg-zinc-950 bg-brick-pattern relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="mb-16 md:flex justify-between items-end border-b-4 border-yellow-400 pb-4">
+      <h2 class="text-5xl md:text-7xl font-bebas text-white uppercase tracking-wider">Layanan <span class="text-yellow-400">Kami</span></h2>
+      <p class="text-zinc-400 font-bold uppercase mt-4 md:mt-0 tracking-wider">Menu Andalan</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map(service => (
+        <div class="bg-zinc-900 p-8 border-2 border-zinc-700 hover:border-yellow-400 transition-colors brutal-shadow flex flex-col justify-between group cursor-pointer">
+          <div>
+            <div class="w-14 h-14 bg-zinc-800 flex items-center justify-center mb-6 group-hover:bg-yellow-400 group-hover:text-black text-white transition-colors border-2 border-transparent group-hover:border-black">
+              <Icon name={service.icon} class="w-7 h-7" />
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-3 font-bebas tracking-wide uppercase">{service.title}</h3>
+            <p class="text-zinc-400 text-sm mb-6 leading-relaxed font-medium">{service.desc}</p>
+          </div>
+          <div class="pt-4 mt-auto">
+            <span class="text-yellow-400 font-bebas text-3xl tracking-wide">{service.price}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

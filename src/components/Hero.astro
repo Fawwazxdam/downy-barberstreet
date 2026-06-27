@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<section class="relative h-[90vh] flex items-center justify-center overflow-hidden bg-zinc-950">
+  <div class="absolute inset-0 z-0">
+    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Barbershop Background" class="w-full h-full object-cover object-center opacity-30 grayscale contrast-125" />
+    <div class="absolute inset-0 bg-linear-to-t from-zinc-950 via-zinc-950/80 to-transparent"></div>
+  </div>
+  
+  <div class="relative z-10 px-4 max-w-5xl mx-auto flex flex-col items-center md:items-start w-full text-center md:text-left">
+    <div class="mb-4 inline-flex items-center bg-yellow-400 text-black px-3 py-1 font-bold text-sm tracking-widest uppercase border-2 border-black transform -skew-x-12">
+      <span>Est. 2020</span>
+    </div>
+    
+    <h1 class="font-bebas text-7xl md:text-8xl lg:text-9xl text-white leading-[0.9] mb-4 uppercase tracking-wide drop-shadow-xl">
+      STREET CUTS <br/>
+      <span class="text-yellow-400">GOOD VIBES</span>
+    </h1>
+    
+    <p class="mt-4 text-lg md:text-xl text-zinc-300 max-w-xl mb-10 font-bold uppercase tracking-wider">
+      Bukan sekedar cukur, ini soal karakter. <br class="hidden md:block" /> 
+      Tampil stylish ga harus mahal.
+    </p>
+    
+    <a href="#kontak" class="inline-flex items-center justify-center px-8 py-4 text-xl font-bebas tracking-widest text-black bg-yellow-400 border-2 border-yellow-400 brutal-shadow uppercase transition-transform">
+      Booking Jadwal
+      <Icon name="lucide:arrow-right" class="ml-2 w-6 h-6" />
+    </a>
+  </div>
+</section>
